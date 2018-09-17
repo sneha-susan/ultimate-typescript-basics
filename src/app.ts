@@ -1,7 +1,28 @@
-const toppings = ['chilli', 'pepper'];
 
-const newToppings = ['pepperoni'];
+//destructuring object
 
-const allToppings = [...toppings, ... newToppings];
+const pizza = {
+    name: 'Pepperoni',
+    toppings: ['pepperoni']
+}
 
-console.log(allToppings)
+function order({name: pizzaName, toppings: pizzaToppings}: any){
+    return {pizzaName, pizzaToppings}
+}
+
+const {pizzaName} = order(pizza);
+
+
+//destructuring arrays
+
+const toppings = ['pepperoni', 'chilli', 'bacon']
+
+const [ first, second, third ] =  toppings;
+
+console.log(first, second, third);
+
+function logToppings([first, second, third] : any){
+    console.log(first, second, third)
+}
+
+logToppings(toppings);
