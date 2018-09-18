@@ -1,28 +1,11 @@
+const pizza: number = 2;
 
-//destructuring object
-
-const pizza = {
-    name: 'Pepperoni',
-    toppings: ['pepperoni']
+function offerDiscount(order: number): boolean{
+    return order>3;
 }
 
-function order({name: pizzaName, toppings: pizzaToppings}: any){
-    return {pizzaName, pizzaToppings}
+if(offerDiscount(pizza)){
+    console.log(`You're entitled to a discount!`);
+} else {
+    console.log(`Order more than 3 to get a discount!`);
 }
-
-const {pizzaName} = order(pizza);
-
-
-//destructuring arrays
-
-const toppings = ['pepperoni', 'chilli', 'bacon']
-
-const [ first, second, third ] =  toppings;
-
-console.log(first, second, third);
-
-function logToppings([first, second, third] : any){
-    console.log(first, second, third)
-}
-
-logToppings(toppings);
