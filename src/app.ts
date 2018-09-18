@@ -1,11 +1,7 @@
-const pizza: number = 2;
+let coupon;
 
-function offerDiscount(order: number): boolean{
-    return order>3;
-}
+coupon = 25;
 
-if(offerDiscount(pizza)){
-    console.log(`You're entitled to a discount!`);
-} else {
-    console.log(`Order more than 3 to get a discount!`);
-}
+coupon = 'pizza';
+
+coupon = true;
