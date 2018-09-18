@@ -1,4 +1,4 @@
-function orderError(error: string){
+function orderError(error: string):never {
     throw new Error(error);
     //never going to return a value
 }
