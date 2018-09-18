@@ -1,7 +1,2 @@
-let coupon;
-
-coupon = 25;
-
-coupon = 'pizza';
-
-coupon = true;
+let implicitCoupon = 'pizza25'; // implicity type or inferred
+let explicitCoupon: string = 'pizza25'; // explicit type
