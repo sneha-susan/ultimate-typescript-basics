@@ -1,3 +1,10 @@
-let pizza : [string, number, boolean]
+type Size  = 'small' | 'medium' | 'large';
+type Callback = (size:Size) => void;
 
-pizza =  ['Pepperoni', 25,  true];
+let pizzaSize : Size= 'small'  //assigned default value of pizzaSize as small
+
+const selectSize : Callback = (x ) =>{
+    pizzaSize = x;
+};
+
+selectSize('small')
