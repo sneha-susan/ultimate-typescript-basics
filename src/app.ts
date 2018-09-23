@@ -1,28 +1,10 @@
-interface Sizes {
-    sizes: string[];
+class Coupon{
+    static allowed = ['Pepperoni', 'Blazing Inferno'];
+    static create(percentage: number){
+        return `PIZZA_RESTAURANT_${percentage}`;
+    }
 }
 
-interface Pizza extends Sizes {
-    name: string;
-    toppings?: number,
-    getAvailableSizes() : string[],
-    [key: number] : string
-}
+console.log(Coupon.allowed);
 
-let pizza : Pizza;
-
-type getAvailableSizes = () => string[]; 
-
-function createPizza(name: string, sizes: string[]): Pizza{
-    return{
-        name,
-        sizes,
-        getAvailableSizes() {
-            return this.sizes;
-        }
-    };
-}
-
-pizza = createPizza('Pepperoni', ['small', 'medium'])
-pizza[1] = 'xyz';
-pizza.toppings = 1;
+console.log(Coupon.create(25));
