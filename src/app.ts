@@ -1,11 +1,28 @@
-type Pizza = {name: string, toppings: number};
-
-const pizza: Pizza = {name: 'Blazing Inferno', toppings: 5};
-
-const serialized = JSON.stringify(pizza);
-
-function getNameFromJSON(obj: string){
-    return (JSON.parse(obj) as Pizza).name;
+interface Sizes {
+    sizes: string[];
 }
 
-getNameFromJSON(serialized);
+interface Pizza extends Sizes {
+    name: string;
+    toppings?: number,
+    getAvailableSizes() : string[],
+    [key: number] : string
+}
+
+let pizza : Pizza;
+
+type getAvailableSizes = () => string[]; 
+
+function createPizza(name: string, sizes: string[]): Pizza{
+    return{
+        name,
+        sizes,
+        getAvailableSizes() {
+            return this.sizes;
+        }
+    };
+}
+
+pizza = createPizza('Pepperoni', ['small', 'medium'])
+pizza[1] = 'xyz';
+pizza.toppings = 1;
